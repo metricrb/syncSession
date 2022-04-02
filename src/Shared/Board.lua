@@ -74,13 +74,13 @@ function Board:ClearSessions()
         end
     end
 
-    Board:HideMain()
+    Board:HideSessions()
     Board:ShowNoUpcoming()
 end
 
 function Board:NewSession(Title: string, Information: table, Time: table)
     Board:HideNoUpcoming()
-    Board:ShowMain()
+    Board:HideSessions()
 
     -- [!] This could eventually cause problems with timezones, but eh..
     if Time.Minute == 0 then
