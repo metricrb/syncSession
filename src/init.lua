@@ -22,6 +22,7 @@ return function(Configuration, Boards)
     
     for _, Board in pairs(Boards:GetChildren()) do
         Modules.Board.New(Board)
+        Modules.Board:ShowNoUpcoming()
     end
 
     local Key = Configuration.Key

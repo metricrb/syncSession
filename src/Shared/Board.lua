@@ -35,12 +35,16 @@ function Board:HideSessions()
 end
 
 function Board:ShowNoUpcoming()
+    Board:HideSessions()
+
     for _, Data in pairs(Board.Boards) do
         Data.Interface.Container.Upcoming.Visible = true
     end
 end
 
 function Board:HideNoUpcoming()
+    Board:ShowSessions()
+
     for _, Data in pairs(Board.Boards) do
         Data.Interface.Container.Upcoming.Visible = true
     end
