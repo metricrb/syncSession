@@ -28,9 +28,33 @@ function Board:ShowSessions()
     end
 end
 
+function Board:HideSessions()
+    for _, Data in pairs(Board.Boards) do
+        Data.Interface.Container.Main.Visible = false
+    end
+end
+
+function Board:ShowNoUpcoming()
+    for _, Data in pairs(Board.Boards) do
+        Data.Interface.Container.Upcoming.Visible = true
+    end
+end
+
+function Board:HideNoUpcoming()
+    for _, Data in pairs(Board.Boards) do
+        Data.Interface.Container.Upcoming.Visible = true
+    end
+end
+
 function Board:ShowError()
     for _, Data in pairs(Board.Boards) do
         Data.Interface.Container.Error.Visible = true
+    end
+end
+
+function Board:HideError()
+    for _, Data in pairs(Board.Boards) do
+        Data.Interface.Container.Error.Visible = false
     end
 end
 
@@ -45,9 +69,15 @@ function Board:ClearSessions()
             end
         end
     end
+
+    Board:HideMain()
+    Board:ShowNoUpcoming()
 end
 
 function Board:NewSession(Title: string, Information: table, Time: table)
+    Board:HideNoUpcoming()
+    Board:ShowMain()
+
     -- [!] This could eventually cause problems with timezones, but eh..
     if Time.Minute == 0 then
         Time.Minute = 00
