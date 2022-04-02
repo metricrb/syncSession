@@ -35,18 +35,14 @@ function Board:HideSessions()
 end
 
 function Board:ShowNoUpcoming()
-    Board:HideSessions()
-
     for _, Data in pairs(Board.Boards) do
         Data.Interface.Container.Upcoming.Visible = true
     end
 end
 
 function Board:HideNoUpcoming()
-    Board:ShowSessions()
-
     for _, Data in pairs(Board.Boards) do
-        Data.Interface.Container.Upcoming.Visible = true
+        Data.Interface.Container.Upcoming.Visible = false
     end
 end
 
@@ -80,7 +76,7 @@ end
 
 function Board:NewSession(Title: string, Information: table, Time: table)
     Board:HideNoUpcoming()
-    Board:HideSessions()
+    Board:ShowSessions()
 
     -- [!] This could eventually cause problems with timezones, but eh..
     if Time.Minute == 0 then
