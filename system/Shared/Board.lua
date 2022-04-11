@@ -1,3 +1,7 @@
+local Shared = script.Parent
+local Remotes = Shared.Remotes
+local SendSession = Remotes.SendSession
+
 local Templates = {
     Board = script.Board,
     Session = script.Session,
@@ -7,7 +11,7 @@ local Templates = {
 
 local Board = {
     Boards = {},
-    Sessions = {}
+    Queue = {}
 }
 Board.__index = Board
 
@@ -74,23 +78,16 @@ function Board:ClearSessions()
     Board:ShowNoUpcoming()
 end
 
-function Board:NewSession(Title: string, Information: table, Time: table)
+function Board:NewSession(Title: string, Information: table, Time: string)
     Board:HideNoUpcoming()
     Board:ShowSessions()
-
-    -- [!] This could eventually cause problems with timezones, but eh..
-    if Time.Minute == 0 then
-        Time.Minute = 00
-    end
-
-    Time = string.format('%s:%s', Time.Hour, Time.Minute)
 
     for _, Data in pairs(Board.Boards) do
         local Interface = Data.Interface
         local Container = Interface.Container.Main
 
         local Session = Templates.Session:Clone()
-        local Information_Container = Session.Information
+        local Information_Container = Session.Left.Information
 
         for _, Table in pairs(Information) do
             local Clone = Templates.Value:Clone()
@@ -102,10 +99,10 @@ function Board:NewSession(Title: string, Information: table, Time: table)
             Clone.Parent = Information_Container
         end
 
-        Session.Text.Title.Text = Title or 'Session'
-        Session.Time.Title.Text = Time or 'Unknown'
-
+        Session.Left.Text.Title.Text = Title or 'Session'
         Session.Parent = Container
+
+        SendSession:FireAllClients(Information_Container, Session.Time.Title, Time)
     end
 end
 

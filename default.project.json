@@ -10,7 +10,7 @@
         "$path": "deploy",
 
         "MainModule": {
-          "$path": "src"
+          "$path": "system"
         }
       }
     }

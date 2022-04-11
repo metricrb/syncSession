@@ -1,6 +1,7 @@
 local HttpService = game:GetService('HttpService')
 
-local Shared = script.Parent
+local sessionSync = script.Parent.Parent
+local Shared = sessionSync.Shared
 local warn = require(Shared.Warn)
 
 local Trello = {}

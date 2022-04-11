@@ -1,0 +1,14 @@
+{
+    "ClassName": "Folder",
+    "Children": [
+      {
+        "Name": "SendSession",
+        "ClassName": "RemoteEvent"
+      },
+
+      {
+        "Name": "FilterText",
+        "ClassName": "RemoteFunction"
+      }
+    ]
+  }
