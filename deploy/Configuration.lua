@@ -4,7 +4,7 @@
 -- ██║░░██║██╔══██╗██║░░██║██╔═══╝░██║░░░░░██╔══╝░░░░░██║░░░
 -- ██████╔╝██║░░██║╚█████╔╝██║░░░░░███████╗███████╗░░░██║░░░
 -- ╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚══════╝╚══════╝░░░╚═╝░░░
--- Refer to our documentation to set up our product properly: https://droplet-systems.gitbook.io/syncSession
+-- Refer to our documentation to set up our product properly: https://droplet-systems.gitbook.io/syncsession
 
 local Players = game:GetService('Players')
 
