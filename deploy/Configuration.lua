@@ -14,6 +14,10 @@ return {
     BoardName = 'Sessions',
 
     List = 'Upcoming',
+    ShiftTypeName = 'Shift',
+    TrainingTypeName = 'Training',
+
+
 
     Fields = {
         {
@@ -92,9 +96,35 @@ return {
                     return 'Unknown user'
                 end
             end
+        },
+--[[          {
+            Argument = 'Status',
+
+            Image = nil,
+            ImageColor = Color3.new(255, 255, 255),
+            GetImage = function(Value)
+                    return nil
+                end
+            
+            Value = 'Status: <b>%s</b>',
+            GetValue = function(Value)
+                local Status, Result = pcall(function()
+                string.format('%s', Value)
+                end)
+
+                if not Status then
+                    Result = nil
+                end
+
+                if Result then
+                    return Value
+                else
+                    return 'Unknown user'
+                end
+            end
         }
     },
-
+]]
     Seperator = ': ',
 
     Wait = 10
