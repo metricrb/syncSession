@@ -97,15 +97,15 @@ return {
                 end
             end
         },
---[[          {
+                 {
             Argument = 'Status',
 
             Image = nil,
             ImageColor = Color3.new(255, 255, 255),
             GetImage = function(Value)
                     return nil
-                end
-            
+                end,
+        
             Value = 'Status: <b>%s</b>',
             GetValue = function(Value)
                 local Status, Result = pcall(function()
@@ -119,12 +119,12 @@ return {
                 if Result then
                     return Value
                 else
-                    return 'Unknown user'
+                    return 'Unknown'
                 end
             end
         }
     },
-]]
+
     Seperator = ': ',
 
     Wait = 10

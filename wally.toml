@@ -1,0 +1,8 @@
+[package]
+name = "randomacc/syncsession"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Red = "uncontained0/red@^1.0.0"

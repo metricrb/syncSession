@@ -13,6 +13,19 @@
           "$path": "system"
         }
       }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$path": "src/ReplicatedStorage",
+
+      "Packages": {
+          "$className": "Folder",
+          "$path": "Packages"
+      },
+      "GetLiveSessions": {
+        "$className": "BindableFunction",
+        "$path": "ReplicatedStorage"
+    }
     }
   }
 }
