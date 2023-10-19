@@ -1,1 +1,0 @@
-"Type: Training\n\nHost: M_etrics\n\nCo-Host: TypicallyShad\n\nStatus: Upcoming"
